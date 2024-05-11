@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Board</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Message Board</h1>
+      <?php include 'post_message.php'; ?>
+      <div class="messages-container">
+        <h2>Messages</h2>
+        <?php
+        // Read the messages from the file
+        $messages = file_get_contents("messages.txt");
+        // Replace newlines with <br> tags to display the messages as HTML
+        $messages = str_replace("\n", "<br>", $messages);
+        // Output the messages
+        echo '<div class="messages">' . $messages . '</div>';
+        ?>
+      </div>
+      <h2>Post a Message</h2>
+      <form method="post" action="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <input type="submit" value="Post Message">
+      </form>
+    </div>
+  </body>
+</html>
