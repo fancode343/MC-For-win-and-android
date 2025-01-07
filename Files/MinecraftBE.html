@@ -1,3 +1,23 @@
-<script>
-window.location.href = "ms-windows-store://pdp/?ProductId=9NBLGGH2JHXJ";
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Example</title>
+    <script>
+        window.onload = function () {
+            // Redirect to the Microsoft Store link
+            window.location.href = "ms-windows-store://pdp/?ProductId=9NBLGGH2JHXJ";
+
+            // After 5 seconds, redirect to the GitHub release page
+            setTimeout(function () {
+                window.location.href = "https://github.com/fancode343/MC-For-win-and-android/releases/tag/1.0";
+            }, 5000);
+        };
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <p>Please wait while we redirect you to the appropriate pages.</p>
+</body>
+</html>
